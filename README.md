@@ -1,6 +1,6 @@
 # ❄️ snow-tracker
 
-Every morning, GitHub Actions pulls a 7-day forecast for 96 resorts (big names and mid-sized local favourites) across the French, Swiss, Italian, Austrian and German Alps. It scores each resort on base depth, fresh snow, sun, wind and drive time, and alerts me when one is worth the trip.
+Every morning, GitHub Actions pulls a 7-day forecast for 100 resorts (big names, mid-sized favourites and small local hills near Monaco) across the French, Swiss, Italian, Austrian and German Alps. It scores each resort on base depth, fresh snow, sun, wind and drive time, and alerts me when one is worth the trip.
 
 No server and no API keys. It runs on free GitHub-hosted runners and the free [Open-Meteo](https://open-meteo.com/) API.
 
@@ -19,13 +19,19 @@ For each resort, the script looks at the last 3 days and the next 7. It finds th
 
 | Verdict | Meaning |
 |---|---|
-| **GO** | Open, ≥40 cm base, ≥15 cm fresh in the 48 h before, wind < 50 km/h |
-| **GOOD** | Open, enough base, sunny |
-| **OK** | Open, enough base |
-| **WATCH** | Not open yet, but ≥30 cm over the last 3 + next 3 days |
+| **GO** 🟢 | Powder within 2 days: ≥15 cm fresh, ≥40 cm base, not windy, not warm (≤3 °C), no rain, and most of 3 cross-check models (ECMWF, ICON, Météo-France) agree |
+| **MAYBE** 🟠 | Main forecast says powder, but the other models don't |
+| **SOON** 🟣 | Powder day later this week |
+| **GOOD** 🔵 | Open, enough base, sunny, no rain |
+| **OK** ⚪ | Open, enough base |
+| **WATCH** 🟡 | Not open yet, but ≥30 cm over the last 3 + next 3 days |
 | **THIN / CLOSED** | Not enough snow / out of season |
 
-Alerts only go out when at least one resort is **GO** (set `alwaysSend: true` in `config.json` for a daily digest).
+**📅 Heads-up:** ≥40 cm forecast within 48 h, 2+ days out, confirmed by most models. This gives you time to plan a long drive.
+
+Every resort in alerts links to its lift status and webcams (a web search by default; set `url` in `config.json` for a direct link).
+
+Alerts only go out when at least one resort is **GO** or has a **heads-up** (set `alwaysSend: true` in `config.json` for a daily digest).
 
 ## Setup
 

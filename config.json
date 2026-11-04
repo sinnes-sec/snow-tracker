@@ -4,7 +4,9 @@
     "glacier": "true = skiable regardless of opens date and modelled depth",
     "driveH": "Approx drive from Monaco, hours (rough estimates)",
     "elev": "Forecast elevation in metres (roughly mid-mountain)",
-    "country": "FR/IT/CH/AT/DE, used for the flag in alerts"
+    "country": "FR/IT/CH/AT/DE, used for the flag in alerts",
+    "url": "Optional link for the resort (lift status / webcams). Without it, alerts link to a web search.",
+    "settings": "warmLimitC: max temp above which snow counts as heavy/slushy. rainLimitMm: rain on or the day before that ruins it. bigSnowCm: 48h total that triggers a heads-up 2+ days ahead."
   },
   "settings": {
     "alwaysSend": false,
@@ -12,10 +14,18 @@
     "goFreshCm": 15,
     "maxDriveH": 99,
     "drivePenaltyPerH": 0,
-    "windLimitKmh": 60
+    "windLimitKmh": 60,
+    "warmLimitC": 3,
+    "rainLimitMm": 5,
+    "bigSnowCm": 40,
+    "goWithinDays": 2
   },
   "resorts": [
+    { "name": "Turini-Camp d'Argent", "country": "FR", "lat": 43.985, "lon": 7.4, "elev": 1800, "driveH": 1.25, "opens": "2026-12-19", "glacier": false },
+    { "name": "Gréolières-les-Neiges", "country": "FR", "lat": 43.826, "lon": 6.913, "elev": 1600, "driveH": 1.5, "opens": "2026-12-19", "glacier": false },
+    { "name": "La Colmiane", "country": "FR", "lat": 44.087, "lon": 7.246, "elev": 1600, "driveH": 1.5, "opens": "2026-12-05", "glacier": false },
     { "name": "Isola 2000", "country": "FR", "lat": 44.187, "lon": 7.157, "elev": 2200, "driveH": 1.75, "opens": "2026-12-05", "glacier": false },
+    { "name": "Roubion", "country": "FR", "lat": 44.106, "lon": 7.04, "elev": 1700, "driveH": 1.75, "opens": "2026-12-19", "glacier": false },
     { "name": "Auron", "country": "FR", "lat": 44.224, "lon": 6.931, "elev": 2000, "driveH": 2, "opens": "2026-12-05", "glacier": false },
     { "name": "Limone Piemonte", "country": "IT", "lat": 44.18, "lon": 7.57, "elev": 1600, "driveH": 2, "opens": "2026-11-28", "glacier": false },
     { "name": "Valberg", "country": "FR", "lat": 44.095, "lon": 6.932, "elev": 1800, "driveH": 2, "opens": "2026-12-19", "glacier": false },
