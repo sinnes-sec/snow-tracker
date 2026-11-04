@@ -11,7 +11,7 @@
     "goFreshCm": 15,
     "maxDriveH": 6.5,
     "drivePenaltyPerH": 3,
-    "windLimitKmh": 50
+    "windLimitKmh": 60
   },
   "resorts": [
     { "name": "Isola 2000", "lat": 44.187, "lon": 7.157, "elev": 2200, "driveH": 1.75, "opens": "2026-11-28", "glacier": false },
