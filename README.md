@@ -1,6 +1,6 @@
 # ❄️ snow-tracker
 
-Every morning, GitHub Actions pulls a 7-day forecast for 52 resorts across the French, Swiss, Italian, Austrian and German Alps. It scores each resort on base depth, fresh snow, sun, wind and drive time, and alerts me when one is worth the trip.
+Every morning, GitHub Actions pulls a 7-day forecast for 50 resorts across the French, Swiss, Italian, Austrian and German Alps. It scores each resort on base depth, fresh snow, sun, wind and drive time, and alerts me when one is worth the trip.
 
 No server and no API keys. It runs on free GitHub-hosted runners and the free [Open-Meteo](https://open-meteo.com/) API.
 
