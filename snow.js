@@ -73,7 +73,7 @@ const bestTxt = r => r.best ? `${dow(r.best.date)} ${icon(r.best.code)} · ${r.b
 // ---- outputs ----
 // 1. Email HTML
 const colour = { GO: '#1a7f37', GOOD: '#2f81f7', OK: '#6e7781', WATCH: '#bf8700', THIN: '#cf222e', CLOSED: '#8c959f' };
-const rows = results.map(r => `<tr><td><b>${r.name}</b></td><td>${r.driveH}h</td><td>${r.depthToday} cm</td>
+const rows = results.map(r => `<tr><td><b>${r.name}</b> <small>${r.country ?? ''}</small></td><td>${r.driveH}h</td><td>${r.glacier ? 'glacier' : r.depthToday + ' cm'}</td>
 <td>${r.recent} cm</td><td>${r.next3} cm</td><td>${bestTxt(r)}</td>
 <td style="color:${colour[r.verdict]};font-weight:bold">${r.verdict}</td></tr>`).join('\n');
 const legend = `GO = ≥${C.goFreshCm} cm fresh in the 48h before the day, ≥${C.minDepthCm} cm base, wind &lt; ${C.windLimitKmh} km/h. `
@@ -86,7 +86,7 @@ ${rows}</table><p style="font-size:12px;color:#57606a">${legend}</p></div>`);
 
 // 2. Markdown summary (shown on the Actions run page)
 const md = [`## ${subject}`, '', '| Resort | Drive | Depth | Last 72h | Next 72h | Best day (7d) | Verdict |', '|---|---|---|---|---|---|---|',
-  ...results.map(r => `| ${r.name} | ${r.driveH}h | ${r.depthToday} cm | ${r.recent} cm | ${r.next3} cm | ${bestTxt(r)} | **${r.verdict}** |`),
+  ...results.map(r => `| ${r.name} (${r.country ?? ''}) | ${r.driveH}h | ${r.glacier ? 'glacier' : r.depthToday + ' cm'} | ${r.recent} cm | ${r.next3} cm | ${bestTxt(r)} | **${r.verdict}** |`),
   '', legend.replace('&lt;', '<')].join('\n');
 if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n');
 
@@ -100,9 +100,13 @@ fs.writeFileSync(hist, [header, ...old, ...fresh].join('\n') + '\n');
 // 4. Telegram message (HTML parse mode: no tables, so one line per interesting resort)
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const emoji = { GO: '🟢', GOOD: '🔵', OK: '⚪', WATCH: '🟡' };
-const lines = results.filter(r => emoji[r.verdict]).map(r => r.best
-  ? `${emoji[r.verdict]} <b>${esc(r.name)}</b> (${r.driveH}h): ${dow(r.best.date)} ${icon(r.best.code)} ${r.best.fresh48} cm fresh, ${r.best.depth} cm base, ${r.best.wind} km/h`
-  : `${emoji[r.verdict]} <b>${esc(r.name)}</b> (${r.driveH}h): ${r.recent + r.next3} cm falling, not open yet`);
+const flag = { FR: '🇫🇷', IT: '🇮🇹', CH: '🇨🇭', AT: '🇦🇹', DE: '🇩🇪' };
+const MAX_LINES = 12; // keep the phone message short; the full table is on the run page
+const shown = results.filter(r => emoji[r.verdict]);
+const lines = shown.slice(0, MAX_LINES).map(r => r.best
+  ? `${emoji[r.verdict]} ${flag[r.country] ?? ''} <b>${esc(r.name)}</b> (${r.driveH}h): ${dow(r.best.date)} ${icon(r.best.code)} ${r.best.fresh48} cm fresh, ${r.glacier ? 'glacier' : r.best.depth + ' cm base'}, ${r.best.wind} km/h`
+  : `${emoji[r.verdict]} ${flag[r.country] ?? ''} <b>${esc(r.name)}</b> (${r.driveH}h): ${r.recent + r.next3} cm falling, not open yet`);
+if (shown.length > MAX_LINES) lines.push(`…and ${shown.length - MAX_LINES} more`);
 const runUrl = process.env.GITHUB_RUN_ID
   ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : '';
 fs.writeFileSync('telegram.html', [`<b>${esc(subject)}</b>`, '',
