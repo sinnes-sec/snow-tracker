@@ -113,10 +113,13 @@ const PRIORITY = ['GO', 'MAYBE', 'SOON', 'GOOD', 'OK', 'WATCH', 'THIN', 'CLOSED'
 results.sort((a, b) => PRIORITY.indexOf(a.verdict) - PRIORITY.indexOf(b.verdict) || b.rank - a.rank);
 
 const go = results.filter(r => r.verdict === 'GO');
+const maybe = results.filter(r => r.verdict === 'MAYBE' && C.alertOnMaybe);
 const heads = results.filter(r => r.heads && r.verdict !== 'GO').sort((a, b) => b.heads.amt - a.heads.amt);
-const send = go.length > 0 || heads.length > 0 || C.alwaysSend || force;
+const send = go.length > 0 || maybe.length > 0 || heads.length > 0 || C.alwaysSend || force;
 const subject = go.length
   ? `❄️ ${go.length} GO: ${go[0].name} ${dow(go[0].best.date)} (${go[0].best.fresh48} cm fresh)`
+  : maybe.length
+    ? `🟠 Possible powder: ${maybe[0].name} ${dow(maybe[0].best.date)} (${maybe[0].best.fresh48} cm, models disagree)`
   : heads.length
     ? `📅 Big snow coming: ${heads[0].name} ${dow(heads[0].heads.date)} (${heads[0].heads.amt} cm forecast)`
     : `Snow digest: no powder days. Top pick ${results[0].name} (${results[0].verdict})`;

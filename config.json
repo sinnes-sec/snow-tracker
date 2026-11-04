@@ -18,7 +18,8 @@
     "warmLimitC": 3,
     "rainLimitMm": 5,
     "bigSnowCm": 40,
-    "goWithinDays": 2
+    "goWithinDays": 2,
+    "alertOnMaybe": true
   },
   "resorts": [
     { "name": "Turini-Camp d'Argent", "country": "FR", "lat": 43.985, "lon": 7.4, "elev": 1800, "driveH": 1.25, "opens": "2026-12-19", "glacier": false },

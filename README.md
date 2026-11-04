@@ -20,7 +20,7 @@ For each resort, the script looks at the last 3 days and the next 7. It finds th
 | Verdict | Meaning |
 |---|---|
 | **GO** 🟢 | Powder within 2 days: ≥15 cm fresh, ≥40 cm base, not windy, not warm (≤3 °C), no rain, and most of 3 cross-check models (ECMWF, ICON, Météo-France) agree |
-| **MAYBE** 🟠 | Main forecast says powder, but the other models don't |
+| **MAYBE** 🟠 | Main forecast says powder, but the other models don't. Still alerts (set `alertOnMaybe: false` to stop) |
 | **SOON** 🟣 | Powder day later this week |
 | **GOOD** 🔵 | Open, enough base, sunny, no rain |
 | **OK** ⚪ | Open, enough base |
