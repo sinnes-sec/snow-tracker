@@ -97,7 +97,19 @@ const old = fs.existsSync(hist) ? fs.readFileSync(hist, 'utf8').trim().split('\n
 const fresh = results.map(r => [today, `"${r.name}"`, r.depthToday, r.recent, r.next3, r.verdict, r.best?.date ?? ''].join(','));
 fs.writeFileSync(hist, [header, ...old, ...fresh].join('\n') + '\n');
 
-// 4. Step outputs
+// 4. Telegram message (HTML parse mode: no tables, so one line per interesting resort)
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const emoji = { GO: '🟢', GOOD: '🔵', OK: '⚪', WATCH: '🟡' };
+const lines = results.filter(r => emoji[r.verdict]).map(r => r.best
+  ? `${emoji[r.verdict]} <b>${esc(r.name)}</b> (${r.driveH}h): ${dow(r.best.date)} ${icon(r.best.code)} ${r.best.fresh48} cm fresh, ${r.best.depth} cm base, ${r.best.wind} km/h`
+  : `${emoji[r.verdict]} <b>${esc(r.name)}</b> (${r.driveH}h): ${r.recent + r.next3} cm falling, not open yet`);
+const runUrl = process.env.GITHUB_RUN_ID
+  ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : '';
+fs.writeFileSync('telegram.html', [`<b>${esc(subject)}</b>`, '',
+  ...(lines.length ? lines : ['Nothing skiable in range.']),
+  '', `<i>Modelled depth, check lift status before driving.</i>`, runUrl ? `<a href="${runUrl}">Full table</a>` : ''].join('\n').trim());
+
+// 5. Step outputs
 if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `send=${send}\nsubject=${subject}\n`);
 console.log(md);
 console.log(`\nsend=${send}`);

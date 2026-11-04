@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
+      HAS_TELEGRAM: ${{ secrets.TELEGRAM_BOT_TOKEN != '' && secrets.TELEGRAM_CHAT_ID != '' }}
       HAS_SMTP: ${{ secrets.SMTP_PASSWORD != '' }}
       HAS_NTFY: ${{ secrets.NTFY_TOPIC != '' }}
     steps:
@@ -36,6 +37,16 @@ jobs:
         run: node snow.js
         env:
           FORCE_SEND: ${{ inputs.force_send || 'false' }}
+
+      - name: Telegram alert
+        if: steps.snow.outputs.send == 'true' && env.HAS_TELEGRAM == 'true'
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -sS --fail-with-body "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            -d chat_id="$TG_CHAT" -d parse_mode=HTML -d disable_web_page_preview=true \
+            --data-urlencode text@telegram.html > /dev/null
 
       - name: Email alert
         if: steps.snow.outputs.send == 'true' && env.HAS_SMTP == 'true'

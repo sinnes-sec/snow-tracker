@@ -12,7 +12,7 @@ cron 05:43 UTC ─▶ snow.js ─▶ Open-Meteo (one multi-location request)
                     ├─▶ score & rank every resort ─▶ verdict
                     ├─▶ job summary table (Actions run page)
                     ├─▶ data/history.csv (committed daily)
-                    └─▶ if any GO: email (Gmail SMTP) and/or phone push (ntfy)
+                    └─▶ if any GO: Telegram, email and/or ntfy push
 ```
 
 For each resort, the script looks at the last 3 days and the next 7. It finds the best open day in the next week and ranks resorts by that day's score minus a penalty for every hour of driving.
@@ -29,7 +29,8 @@ Alerts only go out when at least one resort is **GO** (set `alwaysSend: true` in
 
 ## Setup
 
-1. **Notifications** (Settings → Secrets and variables → Actions → New repository secret). Set up either or both:
+1. **Notifications** (Settings → Secrets and variables → Actions → New repository secret). Set up any combination:
+   - **Telegram:** create a bot with [@BotFather](https://t.me/BotFather) and save its token as `TELEGRAM_BOT_TOKEN`. Send your bot any message, open `https://api.telegram.org/bot<TOKEN>/getUpdates`, and save `message.chat.id` as `TELEGRAM_CHAT_ID`.
    - **Email:** `SMTP_USERNAME` = your Gmail address, `SMTP_PASSWORD` = a [Gmail app password](https://myaccount.google.com/apppasswords) (needs 2-Step Verification), and optionally `MAIL_TO` if alerts should go to a different address.
    - **Phone push:** `NTFY_TOPIC` = a long random string. Install the [ntfy](https://ntfy.sh) app and subscribe to the same topic. Anyone who knows the topic can read it, so make it unguessable.
 2. **Test:** Actions → Snow tracker → Run workflow → tick *force send*.
