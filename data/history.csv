@@ -1,0 +1,15 @@
+date,resort,depth_cm,last72_cm,next72_cm,verdict,best_day
+2026-11-04,"Zermatt",3,0,2,OK,2026-11-09
+2026-11-04,"Isola 2000",2,0,8,CLOSED,
+2026-11-04,"Auron",0,0,5,CLOSED,
+2026-11-04,"Valberg",0,0,1,CLOSED,
+2026-11-04,"Limone Piemonte",4,0,10,CLOSED,
+2026-11-04,"Prato Nevoso",5,0,9,CLOSED,
+2026-11-04,"Pra Loup",0,0,2,CLOSED,
+2026-11-04,"Sestriere",1,0,7,CLOSED,
+2026-11-04,"Montgenèvre",0,0,7,CLOSED,
+2026-11-04,"Serre Chevalier",1,0,10,CLOSED,
+2026-11-04,"Cervinia",5,0,8,THIN,
+2026-11-04,"Les 2 Alpes",0,0,4,CLOSED,
+2026-11-04,"Val Thorens",0,0,6,CLOSED,
+2026-11-04,"Tignes",0,0,4,CLOSED,

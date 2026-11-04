@@ -1,0 +1,32 @@
+{
+  "_notes": {
+    "opens": "Season opening date YYYY-MM-DD. TYPICAL estimates - verify on each resort site.",
+    "glacier": "true = skiable regardless of opens date and modelled depth",
+    "driveH": "Approx drive from Monaco, hours",
+    "elev": "Forecast elevation in metres (roughly mid-mountain)"
+  },
+  "settings": {
+    "alwaysSend": false,
+    "minDepthCm": 40,
+    "goFreshCm": 15,
+    "maxDriveH": 6.5,
+    "drivePenaltyPerH": 3,
+    "windLimitKmh": 50
+  },
+  "resorts": [
+    { "name": "Isola 2000", "lat": 44.187, "lon": 7.157, "elev": 2200, "driveH": 1.75, "opens": "2026-11-28", "glacier": false },
+    { "name": "Auron", "lat": 44.224, "lon": 6.931, "elev": 2000, "driveH": 2, "opens": "2026-12-05", "glacier": false },
+    { "name": "Valberg", "lat": 44.095, "lon": 6.932, "elev": 1800, "driveH": 2, "opens": "2026-12-12", "glacier": false },
+    { "name": "Limone Piemonte", "lat": 44.18, "lon": 7.57, "elev": 1600, "driveH": 2, "opens": "2026-12-05", "glacier": false },
+    { "name": "Prato Nevoso", "lat": 44.252, "lon": 7.786, "elev": 1700, "driveH": 2.5, "opens": "2026-12-05", "glacier": false },
+    { "name": "Pra Loup", "lat": 44.369, "lon": 6.603, "elev": 1900, "driveH": 3, "opens": "2026-12-12", "glacier": false },
+    { "name": "Sestriere", "lat": 44.957, "lon": 6.879, "elev": 2300, "driveH": 3.75, "opens": "2026-11-28", "glacier": false },
+    { "name": "Montgenèvre", "lat": 44.931, "lon": 6.723, "elev": 2200, "driveH": 4, "opens": "2026-12-05", "glacier": false },
+    { "name": "Serre Chevalier", "lat": 44.944, "lon": 6.556, "elev": 2200, "driveH": 4.25, "opens": "2026-12-12", "glacier": false },
+    { "name": "Cervinia", "lat": 45.934, "lon": 7.63, "elev": 2700, "driveH": 4.75, "opens": "2026-10-24", "glacier": false },
+    { "name": "Les 2 Alpes", "lat": 45.007, "lon": 6.122, "elev": 2600, "driveH": 5, "opens": "2026-11-28", "glacier": false },
+    { "name": "Val Thorens", "lat": 45.298, "lon": 6.58, "elev": 2600, "driveH": 5.5, "opens": "2026-11-21", "glacier": false },
+    { "name": "Tignes", "lat": 45.469, "lon": 6.906, "elev": 2600, "driveH": 5.75, "opens": "2026-11-28", "glacier": false },
+    { "name": "Zermatt", "lat": 46.02, "lon": 7.749, "elev": 2800, "driveH": 6, "opens": "2026-01-01", "glacier": true }
+  ]
+}
