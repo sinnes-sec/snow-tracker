@@ -1813,3 +1813,103 @@ date,resort,depth_cm,last72_cm,next72_cm,verdict,best_day
 2026-11-23,"Zugspitze",22,10,0,CLOSED,
 2026-11-23,"Mayrhofen",4,3,0,CLOSED,
 2026-11-23,"Kitzbühel",1,5,0,CLOSED,
+2026-11-24,"Val Thorens",88,60,6,GO,2026-11-24
+2026-11-24,"Tignes",102,47,7,GO,2026-11-24
+2026-11-24,"Verbier",116,36,4,GO,2026-11-24
+2026-11-24,"Grimentz-Zinal",96,30,2,GO,2026-11-24
+2026-11-24,"Mürren",53,33,4,GO,2026-11-24
+2026-11-24,"Andermatt",56,29,3,GO,2026-11-24
+2026-11-24,"Davos",41,20,5,GO,2026-11-24
+2026-11-24,"Passo Tonale",24,5,27,SOON,2026-11-28
+2026-11-24,"Madonna di Campiglio",18,3,27,SOON,2026-11-27
+2026-11-24,"St. Moritz",39,10,16,GOOD,2026-11-28
+2026-11-24,"Sölden",32,4,10,GOOD,2026-11-28
+2026-11-24,"Livigno",36,10,12,GOOD,2026-11-28
+2026-11-24,"Cervinia",80,11,9,GOOD,2026-11-28
+2026-11-24,"Courmayeur",76,20,10,GOOD,2026-11-28
+2026-11-24,"La Thuile",101,37,10,GOOD,2026-11-28
+2026-11-24,"Val d'Isère",127,36,4,GOOD,2026-11-28
+2026-11-24,"Pila",105,9,5,GOOD,2026-11-28
+2026-11-24,"Chamonix",91,43,3,GOOD,2026-11-28
+2026-11-24,"Zermatt",71,22,4,GOOD,2026-11-28
+2026-11-24,"Les 2 Alpes",69,70,16,GOOD,2026-11-28
+2026-11-24,"Champoluc (Monterosa)",83,3,5,GOOD,2026-11-28
+2026-11-24,"Gressoney",80,3,8,GOOD,2026-11-28
+2026-11-24,"Villars-Gryon",66,56,3,GOOD,2026-11-28
+2026-11-24,"Crans-Montana",86,35,3,GOOD,2026-11-28
+2026-11-24,"Laax",58,25,3,GOOD,2026-11-28
+2026-11-24,"Obergurgl",26,1,15,GOOD,2026-11-29
+2026-11-24,"Turini-Camp d'Argent",0,1,35,WATCH,
+2026-11-24,"Isola 2000",12,18,20,WATCH,
+2026-11-24,"Auron",5,13,23,WATCH,
+2026-11-24,"Limone Piemonte",1,3,30,WATCH,
+2026-11-24,"Risoul-Vars",28,25,12,WATCH,
+2026-11-24,"Bardonecchia",11,18,18,WATCH,
+2026-11-24,"Orcières Merlette",67,43,24,WATCH,
+2026-11-24,"Montgenèvre",16,18,19,WATCH,
+2026-11-24,"Superdévoluy",7,19,29,WATCH,
+2026-11-24,"Puy-Saint-Vincent",16,21,30,WATCH,
+2026-11-24,"Serre Chevalier",24,27,28,WATCH,
+2026-11-24,"La Grave",64,51,17,WATCH,
+2026-11-24,"Chamrousse",15,13,42,WATCH,
+2026-11-24,"Valloire",25,39,10,WATCH,
+2026-11-24,"Alpe d'Huez",68,55,22,WATCH,
+2026-11-24,"Les Contamines",56,42,4,WATCH,
+2026-11-24,"Courchevel",71,58,5,WATCH,
+2026-11-24,"La Rosière",74,69,4,WATCH,
+2026-11-24,"Méribel",69,76,8,WATCH,
+2026-11-24,"Sainte-Foy-Tarentaise",108,41,3,WATCH,
+2026-11-24,"Valmorel",56,68,9,WATCH,
+2026-11-24,"La Plagne",126,77,6,WATCH,
+2026-11-24,"Champéry",16,32,2,WATCH,
+2026-11-24,"Flaine",78,83,8,WATCH,
+2026-11-24,"La Clusaz",18,43,6,WATCH,
+2026-11-24,"Les Arcs",128,57,4,WATCH,
+2026-11-24,"Les Saisies",17,59,6,WATCH,
+2026-11-24,"Aprica",12,5,29,WATCH,
+2026-11-24,"Avoriaz",65,81,9,WATCH,
+2026-11-24,"Adelboden-Lenk",35,35,3,WATCH,
+2026-11-24,"Engelberg",64,57,2,WATCH,
+2026-11-24,"Hoch-Ybrig",25,35,2,WATCH,
+2026-11-24,"Stoos",59,35,1,WATCH,
+2026-11-24,"Folgarida-Marilleva",11,3,31,WATCH,
+2026-11-24,"Axamer Lizum",12,5,9,THIN,
+2026-11-24,"Gréolières-les-Neiges",0,0,2,CLOSED,
+2026-11-24,"La Colmiane",0,0,10,CLOSED,
+2026-11-24,"Roubion",3,0,19,CLOSED,
+2026-11-24,"Valberg",4,2,19,CLOSED,
+2026-11-24,"Artesina",1,2,22,CLOSED,
+2026-11-24,"Prato Nevoso",1,2,22,CLOSED,
+2026-11-24,"Pra Loup",6,15,13,CLOSED,
+2026-11-24,"Les Orres",4,17,12,CLOSED,
+2026-11-24,"Sauze d'Oulx",5,9,12,CLOSED,
+2026-11-24,"Sestriere",9,13,16,CLOSED,
+2026-11-24,"Val Cenis",46,19,7,CLOSED,
+2026-11-24,"Belalp",80,20,4,CLOSED,
+2026-11-24,"Saas-Fee",74,10,5,CLOSED,
+2026-11-24,"Savognin",17,14,12,CLOSED,
+2026-11-24,"Arosa Lenzerheide",35,9,7,CLOSED,
+2026-11-24,"Bormio",16,5,13,CLOSED,
+2026-11-24,"Flumserberg",24,23,2,CLOSED,
+2026-11-24,"Pejo",25,4,24,CLOSED,
+2026-11-24,"Santa Caterina Valfurva",33,5,16,CLOSED,
+2026-11-24,"Brandnertal",28,13,1,CLOSED,
+2026-11-24,"Obereggen",17,5,17,CLOSED,
+2026-11-24,"San Martino di Castrozza",17,4,24,CLOSED,
+2026-11-24,"Damüls-Mellau",27,13,1,CLOSED,
+2026-11-24,"Nauders",29,4,7,CLOSED,
+2026-11-24,"Silvretta Montafon",36,13,1,CLOSED,
+2026-11-24,"Val Gardena",15,5,17,CLOSED,
+2026-11-24,"Alta Badia",19,3,17,CLOSED,
+2026-11-24,"Serfaus-Fiss-Ladis",29,4,5,CLOSED,
+2026-11-24,"Cortina d'Ampezzo",22,3,19,CLOSED,
+2026-11-24,"Kronplatz",0,3,6,CLOSED,
+2026-11-24,"Lech Zürs",36,13,1,CLOSED,
+2026-11-24,"Oberstdorf",17,18,0,CLOSED,
+2026-11-24,"St. Anton",35,17,2,CLOSED,
+2026-11-24,"Ischgl",36,16,6,CLOSED,
+2026-11-24,"Garmisch-Classic",3,4,0,CLOSED,
+2026-11-24,"Kühtai",23,6,6,CLOSED,
+2026-11-24,"Zugspitze",23,7,0,CLOSED,
+2026-11-24,"Mayrhofen",4,3,10,CLOSED,
+2026-11-24,"Kitzbühel",1,4,8,CLOSED,
